@@ -1,13 +1,15 @@
-import {primary45} from "./utils/colors";
 import logo from  "./assets/logo.png"
 
 export function Header() {
   const styles = {
     container: {
-      //backgroundColor: primary45,
+      backgroundColor: "white",
       color: '#FFF',
       padding: 12,
       fontWeight: 600,
+      position: "sticky",
+      top: 0,
+      zIndex: 10,
     },
     image: {
       width : '10%',

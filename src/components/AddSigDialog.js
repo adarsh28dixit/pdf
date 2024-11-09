@@ -34,6 +34,7 @@ export function AddSigDialog({ onConfirm, onClose, autoDate, setAutoDate }) {
     <Dialog
       isVisible={true}
       title={"Add signature"}
+      onClose={onClose}
       body={
         <div style={styles.container}>
           <div style={styles.sigContainer}>

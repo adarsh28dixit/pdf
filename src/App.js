@@ -74,8 +74,12 @@ function App() {
     <div>
       <Header />
       <div style={styles.subHeader}>
-        <div style={styles.heading}>Fill & sign PDF</div>
-        <div style={styles.subHeading}>Add signature to PDF. Fill out PDF forms</div>
+        {!pdf ? (
+          <div>
+            <div style={styles.heading}>Fill & sign PDF</div>
+            <div style={styles.subHeading}>Add signature to PDF. Fill out PDF forms</div>
+          </div>
+        ) : null}
       </div>
       <div style={styles.container}>
         {signatureDialogVisible ? (
@@ -100,7 +104,7 @@ function App() {
         ) : null}
         {!pdf ? (
           <HowToUseSteps />
-        ): null}
+        ) : null}
         {pdf ? (
           <div>
             <div style={styles.controls}>
@@ -234,7 +238,7 @@ function App() {
                     const firstPage = pages[pageNum];
 
                     const pngImage = await pdfDoc.embedPng(signatureURL);
-                    const pngDims = pngImage.scale( scale * .3);
+                    const pngDims = pngImage.scale(scale * .3);
 
                     firstPage.drawImage(pngImage, {
                       x: newX,
