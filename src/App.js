@@ -12,6 +12,9 @@ import DraggableSignature from "./components/DraggableSignature";
 import DraggableText from "./components/DraggableText";
 import dayjs from "dayjs";
 import { HowToUseSteps } from "./components/HowToUseSteps";
+import ReactGA from 'react-ga';
+const TRACKING_ID = "G-5RB48PM8TB"; // OUR_TRACKING_ID
+ReactGA.initialize(TRACKING_ID);
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
